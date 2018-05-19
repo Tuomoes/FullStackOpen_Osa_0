@@ -1,0 +1,30 @@
+käyttäjä->selain:
+note left of selain
+käyttäjä kirjoittaa syöteriville uuden muistiinpanon
+ja painaa talleta nappia.
+end note
+
+note right of selain
+ sivun uudelleenlataus estetään kieltämällä submitoinnin vakiotoiminta
+ 
+ scriptin tapahtumakuuntelija aktivoituu ja lisää pyydetyn syötteen
+ muistiinpanolistaan.
+ 
+ lopuksi uusi muistiinpano lähetetään palvelimelle POST pyynnöllä
+end note
+
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_notes
+note left of palvelin
+  selain lähettää pavelimelle POST pyynnön uuden
+  elementin lisäämiseksi notes osioon
+end note
+
+palvelin->selain: status 201
+note right of selain
+  palvelin kertoo mustiinpanon lisäyksen onnistuneen
+end note
+
+
+note left of selain
+ selain näyttää notes listan päivittyneen sisällön
+end note

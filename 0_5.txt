@@ -1,0 +1,31 @@
+k‰ytt‰j‰->selain:
+note left of selain
+k‰ytt‰j‰ kirjoittaa osoiteriville
+fullstack-exampleapp.herokuapp.com/spa
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/spa
+note left of palvelin
+  muodostetaan HTML sivun pohja muistiinpanojen
+  taulukointi- ja syˆttˆsivulle.
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+note left of palvelin
+  ladataan html head-osion script-tagin 
+  m‰‰rittelem‰ script osio spa.js
+end note
+palvelin->selain: status 200, spa.js javascript-tiedosto
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+note left of palvelin
+  main.js skripti kutsuu data.json palvelua ja asettaa
+  paluuarvon tiedot html-sivun notes taulukkoon
+end note
+
+palvelin->selain: status 200, data.json tiedosto
+
+note left of selain
+ selain n‰ytt‰‰ palvelimen palauttaman HTML:n
+ johon on upotettu palvelimelta haettu notes data
+end note
